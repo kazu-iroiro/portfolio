@@ -38,3 +38,30 @@ body {
 #topImage3rd {
     background-image: url('image/top3.jpg');
 }
+
+.snsIconSet {
+    margin-left:8.5svw;
+    margin-top: 3svw;
+    width: 34svw;
+}
+
+.snsIconBox {
+    width: 25svw;
+    margin: 2svw 0;
+    border-bottom: solid 0.1svw #717171;
+}
+
+.snsIcon {
+    margin-left: 1svw;
+    width: 2.5svw;
+}
+.snsIconText {
+    font-size: 1.75svw;
+    margin: 0 0 0 3svw;
+}
+
+
+.introPartBoxBar {
+    width: 10svw;
+    border: solid 0.1svw #717171;
+}
