@@ -1,4 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 
+.header {
+    margin: 1svw 0;
+}
+
+.header span {
+    font-size: 3svw;
+    margin: 3svw;
+}
+
+.header div {
+    border-bottom: solid 0.1svw #717171;
+    margin: 0 2svw;
+}
+
+
+.topImageBox {
+    width: 32svw;
+    height: 24svw;
+    border: solid 0.25svw #717171;
+    border-radius: 1svw;
+    margin: 2svw 5svw;
+}
 
 
 #topImage1st {
