@@ -144,3 +144,63 @@ body {
     left: 36.25svw;
     top: 55svw;
 }
+
+/* スマートフォン向け表示設定 */
+@media screen and (max-width: 768px) {
+
+    /* 左右ボックスを縦並びに */
+    .leftBox,
+    .rightBox {
+        position: static; /* 固定や絶対位置を解除 */
+        width: 100%;      /* 幅を全体に広げる */
+        margin: 0;
+        padding: 2svw 0;
+    }
+
+    /* 画像ボックスのサイズをスマホに合わせて調整 */
+    .topImageBox {
+        width: 80svw;
+        height: auto; /* 縦横比維持しつつ高さ自動 */
+        margin: 3svw auto; /* 中央寄せ */
+    }
+
+    /* SNSアイコンのレイアウト調整 */
+    .snsIconSet {
+        margin: 3svw auto;
+        width: 80svw;
+    }
+
+    .snsIconBox {
+        width: 100%;
+        margin: 2svw 0;
+    }
+
+    .snsIcon {
+        width: 5svw; /* アイコンを少し大きく */
+        margin-left: 0;
+    }
+
+    .snsIconText {
+        font-size: 3svw;
+        margin-left: 2svw;
+    }
+
+    /* overflow時と同じ配置にする */
+    .overflowLeftBox {
+        position: static;
+        width: 100%;
+        margin-bottom: 4svw;
+    }
+
+    .overflowRightBox {
+        position: static;
+        width: 100%;
+    }
+
+    /* フッターも全幅に合わせる */
+    .footer {
+        width: 100%;
+        text-align: center;
+        margin-top: 5svw;
+    }
+}
