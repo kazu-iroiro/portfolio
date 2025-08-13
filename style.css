@@ -112,3 +112,14 @@ body {
 .introPartBoxText {
     width: 30svw;
 }
+
+.introPartBoxText p {
+}
+
+.footer {
+    width: 30svw;
+}
+
+.footerText {
+    margin-right: 2svw;
+}

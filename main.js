@@ -1,5 +1,30 @@
-// アドレス末尾のバージョン名を削除する
+// GASのURL指定
+const GAS_URL = "https://script.google.com/macros/s/AKfycbz4hkJ7gj21TEboWNebQxqPDlAKO5oCVfkQPJ9HCJ7nI90zFKtwyhI_qZchXVADVK5J/exec";
+
+// URLクエリから cardVer を取得
+function getCardVer() {
+    const params = new URLSearchParams(window.location.search);
+    let verData = params.get("cardVer");
+    params.delete("cardVer");
+    window.history.replaceState({}, '', params.pathname);
+    return verData;
+}
 
 // バージョン名をGASに投げる
+(async () => {
+    const cardVer = getCardVer();
 
-//　
+    if (!cardVer) {
+        console.log("cardVer パラメータがURLに存在しません");
+        return;
+    }
+
+    try {
+        const url = `${GAS_URL}?param=${encodeURIComponent(cardVer)}`;
+        const res = await fetch(url, { method: "GET", mode: "cors" });
+        const data = await res.json();
+        console.log("API response:", data);
+    } catch (err) {
+        console.error("Error:", err);
+    }
+})();
