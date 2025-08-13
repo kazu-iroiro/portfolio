@@ -28,3 +28,29 @@ function getCardVer() {
         console.error("Error:", err);
     }
 })();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    function checkOverflow() {
+        const header = document.getElementById("header");
+        const leftcontent = document.getElementById("leftBox");
+        const rightcontent = document.getElementById("rightBox");
+
+        if (!header) return;
+        if (!leftcontent) return;
+        if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight) {
+            leftcontent.classList.add("overflowLeftBox");
+            rightcontent.classList.add("overflowRightBox");
+            rightcontent.classList.remove("rightBox");
+
+        } else {
+            leftcontent.classList.remove("overflowLeftBox");
+            rightcontent.classList.remove("overflowRightBox");
+            rightcontent.classList.add("rightBox");
+
+        }
+    }
+
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
+});

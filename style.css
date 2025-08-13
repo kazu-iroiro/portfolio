@@ -4,7 +4,11 @@ body {
 }
 
 .header {
-    margin: 1svw 0;
+    margin: 0 0 1svw 0;
+    padding: 1svw 0 0 0;
+    position: fixed;
+    background: #ffffff;
+    z-index: 100;
 }
 
 .header span {
@@ -15,11 +19,14 @@ body {
 .header div {
     border-bottom: solid 0.1svw #717171;
     margin: 0 2svw;
+    width: 96svw;
 }
 
 .leftBox {
     margin: 0;
-    padding: 0;
+    padding: 0 0 2svw 0;
+    position: fixed;
+    top: 7.5svw;
 }
 
 .rightBox {
@@ -113,13 +120,27 @@ body {
     width: 30svw;
 }
 
-.introPartBoxText p {
-}
+.introPartBoxText p {}
 
 .footer {
+    margin-top: 5svw;
     width: 30svw;
+    text-align: right;
 }
 
 .footerText {
-    margin-right: 2svw;
+    margin-right: 0svw;
+}
+
+.overflowLeftBox {
+    position: absolute;
+    left: 30svw;
+}
+
+.overflowRightBox {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 36.25svw;
+    top: 55svw;
 }
