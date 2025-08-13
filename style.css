@@ -33,7 +33,7 @@ body {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 7.5svw;
+    top: 9svw;
     left: 55svw;
 }
 
@@ -145,62 +145,79 @@ body {
     top: 55svw;
 }
 
-/* スマートフォン向け表示設定 */
+/* スマホ表示時は縦並び */
 @media screen and (max-width: 768px) {
-
-    /* 左右ボックスを縦並びに */
-    .leftBox,
-    .rightBox {
-        position: static; /* 固定や絶対位置を解除 */
-        width: 100%;      /* 幅を全体に広げる */
+    html {
         margin: 0;
-        padding: 2svw 0;
     }
 
-    /* 画像ボックスのサイズをスマホに合わせて調整 */
+    .header span {
+        font-size: 8svw;
+        margin: 4svw;
+    }
+
+    .leftBox {
+        position: absolute;
+        top: 15svw;
+        left: 5svw;
+    }
+
+    .rightBox {
+        position: absolute;
+        top: 130svw;
+        left: 15svw;
+    }
+
     .topImageBox {
         width: 80svw;
-        height: auto; /* 縦横比維持しつつ高さ自動 */
-        margin: 3svw auto; /* 中央寄せ */
+        height: 60svw;
+        border: solid 0.5svw #717171;
+        border-radius: 3svw;
+        margin: 5svw 5svw;
     }
 
-    /* SNSアイコンのレイアウト調整 */
     .snsIconSet {
-        margin: 3svw auto;
-        width: 80svw;
+        margin-left: 15svw;
+        margin-top: 3svw;
     }
 
     .snsIconBox {
-        width: 100%;
+        width: 60svw;
         margin: 2svw 0;
+        border-bottom: solid 0.1svw #717171;
     }
 
     .snsIcon {
-        width: 5svw; /* アイコンを少し大きく */
-        margin-left: 0;
+        margin-left: 1svw;
+        width: 7.5svw;
     }
 
     .snsIconText {
-        font-size: 3svw;
-        margin-left: 2svw;
+        font-size: 5svw;
+        margin: 0 0 0 9svw;
     }
 
-    /* overflow時と同じ配置にする */
-    .overflowLeftBox {
-        position: static;
-        width: 100%;
-        margin-bottom: 4svw;
+    .introPartBox span {
+        font-size: 6svw;
     }
 
-    .overflowRightBox {
-        position: static;
-        width: 100%;
+    @keyframes barAnimation {
+        0% {
+            width: 0svw;
+        }
+
+        100% {
+            width: 70svw;
+        }
     }
 
-    /* フッターも全幅に合わせる */
+    .introPartBoxText {
+        width: 70svw;
+    }
+
     .footer {
-        width: 100%;
-        text-align: center;
         margin-top: 5svw;
+        width: 80svw;
+        text-align: right;
     }
 }
