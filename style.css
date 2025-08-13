@@ -9,7 +9,7 @@ body {
 
 .header span {
     font-size: 3svw;
-    margin: 3svw;
+    margin: 4svw;
 }
 
 .header div {
@@ -17,13 +17,25 @@ body {
     margin: 0 2svw;
 }
 
+.leftBox {
+    margin: 0;
+    padding: 0;
+}
+
+.rightBox {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 7.5svw;
+    left: 55svw;
+}
 
 .topImageBox {
     width: 32svw;
     height: 24svw;
     border: solid 0.25svw #717171;
     border-radius: 1svw;
-    margin: 2svw 5svw;
+    margin: 2.5svw 5svw;
 }
 
 
@@ -40,7 +52,7 @@ body {
 }
 
 .snsIconSet {
-    margin-left:8.5svw;
+    margin-left: 8.5svw;
     margin-top: 3svw;
     width: 34svw;
 }
@@ -55,13 +67,48 @@ body {
     margin-left: 1svw;
     width: 2.5svw;
 }
+
 .snsIconText {
     font-size: 1.75svw;
     margin: 0 0 0 3svw;
 }
 
+.introPartBox span {
+    font-size: 2svw;
+}
+
+@keyframes barAnimation {
+    0% {
+        width: 0svw;
+    }
+
+    100% {
+        width: 30svw;
+    }
+}
 
 .introPartBoxBar {
-    width: 10svw;
-    border: solid 0.1svw #717171;
+    width: 0svw;
+    border: solid 0.05svw #717171;
+    animation: barAnimation 1s forwards;
+}
+
+.delay1 {
+    animation-delay: 0.25s;
+}
+
+.delay2 {
+    animation-delay: 0.35s;
+}
+
+.delay3 {
+    animation-delay: 0.40s;
+}
+
+.delay4 {
+    animation-delay: 0.45s;
+}
+
+.introPartBoxText {
+    width: 30svw;
 }
