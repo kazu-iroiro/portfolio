@@ -70,6 +70,11 @@ body {
     border-bottom: solid 0.1svw #717171;
 }
 
+.snsIconBox a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .snsIcon {
     margin-left: 1svw;
     width: 2.5svw;
@@ -195,6 +200,10 @@ body {
     .snsIconText {
         font-size: 5svw;
         margin: 0 0 0 9svw;
+    }
+
+    .introPartBox {
+        margin-bottom: 10svw;
     }
 
     .introPartBox span {
