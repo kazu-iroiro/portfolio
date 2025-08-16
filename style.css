@@ -46,8 +46,9 @@ body {
 }
 
 
-#topImage1st {
+/*#topImage1st {
     background-image: url('image/top1.jpg');
+    display: block;
 }
 
 #topImage2nd {
@@ -56,6 +57,56 @@ body {
 
 #topImage3rd {
     background-image: url('image/top3.jpg');
+}*/
+
+#topImage1st,
+#topImage2nd,
+#topImage3rd {
+    position: absolute;
+    margin: 2svw;
+    width: 28svw;
+    height: 21svw;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeRotate 15s infinite;
+}
+
+#topImage1st {
+    background-image: url('image/top1.jpg');
+    animation-delay: 0s;
+}
+
+#topImage2nd {
+    background-image: url('image/top2.jpg');
+    animation-delay: 5s;
+}
+
+#topImage3rd {
+    background-image: url('image/top3.jpg');
+    animation-delay: 10s;
+}
+
+@keyframes fadeRotate {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .snsIconSet {
@@ -179,6 +230,14 @@ body {
         margin: 5svw 5svw;
     }
 
+    #topImage1st,
+    #topImage2nd,
+    #topImage3rd {
+        position: absolute;
+        margin: 4svw;
+        width: 72svw;
+        height: 54svw;
+    }
 
     .snsIconSet {
         margin-left: 15svw;

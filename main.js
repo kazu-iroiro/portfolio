@@ -4,10 +4,7 @@ const GAS_URL = "https://script.google.com/macros/s/AKfycbz4hkJ7gj21TEboWNebQxqP
 // URLクエリから cardver を取得
 function getCardVer() {
     const params = new URLSearchParams(window.location.search);
-    let verData = params.get("cardver");
-    params.delete("cardver");
-    window.history.replaceState({}, '', params.pathname);
-    return verData;
+    return params.get("cardver");
 }
 
 // バージョン名をGASに投げる
@@ -17,6 +14,10 @@ function getCardVer() {
     if (!cardver) {
         console.log("cardver パラメータがURLに存在しません");
         return;
+    } else {
+        const params = new URLSearchParams(window.location.search);
+        params.delete("cardver");
+        window.history.replaceState({}, '', params.pathname);
     }
 
     try {
