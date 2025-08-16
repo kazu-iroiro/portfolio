@@ -15,9 +15,9 @@ function getCardVer() {
         console.log("cardver パラメータがURLに存在しません");
         return;
     } else {
-        const params = new URLSearchParams(window.location.search);
-        params.delete("cardver");
-        window.history.replaceState({}, '', params.pathname);
+        const pageUrl = new URL(window.location.href);
+        pageUrl.searchParams.delete("cardver");
+        history.replaceState('', '', pageUrl.toString());
     }
 
     try {
