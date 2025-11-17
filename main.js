@@ -39,11 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!header) return;
         if (!leftcontent) return;
-        if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight) {
+        if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight && window.innerWidth < 768) {
             leftcontent.classList.add("overflowLeftBox");
             rightcontent.classList.add("overflowRightBox");
             rightcontent.classList.remove("rightBox");
-
+            leftcontent.style.position = "fixed";
+        } else if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight && window.innerWidth >= 768) {
+            leftcontent.style.position = "absolute";
         } else {
             leftcontent.classList.remove("overflowLeftBox");
             rightcontent.classList.remove("overflowRightBox");
