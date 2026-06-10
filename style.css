@@ -199,6 +199,8 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding-bottom: 0.5svw;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .carouselContainer::-webkit-scrollbar {
