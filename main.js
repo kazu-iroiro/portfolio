@@ -83,9 +83,10 @@ class Carousel {
 
     handleWheel(e) {
         if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
-            e.preventDefault();
-            this.container.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+            return;
         }
+        e.preventDefault();
+        this.container.scrollBy({ left: e.deltaX, behavior: 'smooth' });
     }
 
     constrainScroll() {

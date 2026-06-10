@@ -199,7 +199,13 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding-bottom: 0.5svw;
-    overscroll-behavior: contain;
+}
+
+@supports (scrollbar-gutter: stable) {
+    .carouselContainer {
+        overscroll-behavior-x: none;
+        overscroll-behavior-y: auto;
+    }
 }
 
 .carouselContainer::-webkit-scrollbar {
@@ -209,9 +215,8 @@ body {
 .carouselTrack {
     display: flex;
     gap: 1svw;
-    padding: 1svw;
-    min-width: max-content;
-
+    padding: 1svw 1svw 1svw 1svw;
+    width: fit-content;
 }
 
 .carouselScrollbar {
