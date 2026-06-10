@@ -72,7 +72,6 @@ class Carousel {
     attachEventListeners() {
         this.container.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
         this.container.addEventListener('scroll', () => this.updateScrollbar());
-        this.container.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
         this.scrollbarTrack.addEventListener('pointerdown', (e) => this.handleScrollbarPointerDown(e));
         window.addEventListener('pointermove', (e) => this.handleScrollbarPointerMove(e));
         window.addEventListener('pointerup', () => this.handleScrollbarPointerUp());
@@ -86,24 +85,6 @@ class Carousel {
         }
     }
 
-    handleTouchMove(e) {
-        // iOSでのスクロール範囲を制限
-        const maxScroll = this.container.scrollWidth - this.container.clientWidth;
-        if (this.container.scrollLeft <= 0 && e.touches[0].clientX < this.container.getBoundingClientRect().width) {
-            // 左端での右スワイプを防止
-            if (e.touches.length === 1) {
-                const touch = e.touches[0];
-                if (touch.clientX > 0) {
-                    e.preventDefault();
-                }
-            }
-        } else if (this.container.scrollLeft >= maxScroll) {
-            // 右端での左スワイプを防止
-            if (e.touches.length === 1) {
-                e.preventDefault();
-            }
-        }
-    }
 
     handleScrollbarClick(e) {
         const rect = this.scrollbarTrack.getBoundingClientRect();
