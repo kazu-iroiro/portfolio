@@ -71,7 +71,10 @@ class Carousel {
 
     attachEventListeners() {
         this.container.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
-        this.container.addEventListener('scroll', () => this.updateScrollbar());
+        this.container.addEventListener('scroll', () => {
+            this.constrainScroll();
+            this.updateScrollbar();
+        });
         this.scrollbarTrack.addEventListener('pointerdown', (e) => this.handleScrollbarPointerDown(e));
         window.addEventListener('pointermove', (e) => this.handleScrollbarPointerMove(e));
         window.addEventListener('pointerup', () => this.handleScrollbarPointerUp());
@@ -85,6 +88,14 @@ class Carousel {
         }
     }
 
+    constrainScroll() {
+        const maxScroll = this.container.scrollWidth - this.container.clientWidth;
+        if (this.container.scrollLeft > maxScroll) {
+            this.container.scrollLeft = maxScroll;
+        } else if (this.container.scrollLeft < 0) {
+            this.container.scrollLeft = 0;
+        }
+    }
 
     handleScrollbarClick(e) {
         const rect = this.scrollbarTrack.getBoundingClientRect();
