@@ -320,6 +320,12 @@ body {
     html {
         margin: 0;
         padding: 0;
+        height: auto;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
     }
 
     .header span {
@@ -328,15 +334,14 @@ body {
     }
 
     .leftBox {
-        position: absolute;
-        top: 15svw;
-        left: 5svw;
+        position: static;
+        padding-top: 2svw;
     }
 
     .rightBox {
-        position: absolute;
-        top: 130svw;
-        left: 15svw;
+        position: static;
+        max-width: none;
+        margin: 8svw 0 0 15svw;
     }
 
     .topImageBox {

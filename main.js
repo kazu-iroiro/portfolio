@@ -241,25 +241,28 @@ document.addEventListener("DOMContentLoaded", function () {
     new Carousel('worksCarousel', 'worksTrack', worksData);
     new Carousel('articlesCarousel', 'articlesTrack', articlesData);
 
-    function checkOverflow() {
+function checkOverflow() {
         const header = document.getElementById("header");
         const leftcontent = document.getElementById("leftBox");
         const rightcontent = document.getElementById("rightBox");
 
-        if (!header) return;
-        if (!leftcontent) return;
-        if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight && window.innerWidth < 768) {
-            leftcontent.classList.add("overflowLeftBox");
-            rightcontent.classList.add("overflowRightBox");
-            rightcontent.classList.remove("rightBox");
-            leftcontent.style.position = "fixed";
-        } else if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight && window.innerWidth >= 768) {
-            leftcontent.style.position = "absolute";
-        } else {
+        if (!header || !leftcontent || !rightcontent) return;
+
+        if (window.innerWidth <= 768) {
             leftcontent.classList.remove("overflowLeftBox");
             rightcontent.classList.remove("overflowRightBox");
             rightcontent.classList.add("rightBox");
-            leftcontent.style.position = window.innerWidth >= 768 ? "fixed" : "absolute";
+            leftcontent.style.position = "";
+            return;
+        }
+
+        leftcontent.classList.remove("overflowLeftBox");
+        rightcontent.classList.remove("overflowRightBox");
+        rightcontent.classList.add("rightBox");
+        if (header.offsetHeight + leftcontent.offsetHeight > window.innerHeight) {
+            leftcontent.style.position = "absolute";
+        } else {
+            leftcontent.style.position = "fixed";
         }
     }
 
