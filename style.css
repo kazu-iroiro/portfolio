@@ -349,7 +349,7 @@ body {
         height: 60svw;
         border: solid 0.5svw #717171;
         border-radius: 3svw;
-        margin: 5svw 5svw;
+        margin: 5svw auto;
     }
 
     #topImage1st,
